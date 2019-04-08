@@ -19,7 +19,6 @@ const getMuseumObjects = (searchParam, callback) => {
 const getDataFromObject = (firstArg, callback) => {
     const url = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${firstArg}`
     request({url, json: true }, (error, response) => {
-        console.log(error)
         if (error) {
             callback('No tienes internet prro', undefined)
         } else if (response.body.Response == 'False') {
